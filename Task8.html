@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alphabetical Sorting</title>
+</head>
+<body>
+  <h2>Write a JavaScript function that returns a passed string with letters in alphabetical order.</h2>
+  <p>Enter a string:</p>
+  <input type="text" id="inputString">
+  <button onclick="sortString()">Sort</button>
+  <p>Expected Output:</p>
+  <p id="sortedOutput"></p>
+
+  <script>
+    function sortString() {
+      // Get the user input
+      let inputString = document.getElementById("inputString").value;
+
+      // Convert the string to an array of characters, sort it, and join it back to a string
+      let sortedString = inputString.split('').sort().join('');
+
+      // Display the sorted string
+      document.getElementById("sortedOutput").textContent = sortedString;
+    }
+  </script>
+</body>
+</html>

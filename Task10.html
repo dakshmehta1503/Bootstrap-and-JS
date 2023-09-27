@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>IST and Date Display</title>
+</head>
+<body>
+  <h2>Date and Time: </h2>
+
+  <button onclick="showIST()">Show IST</button>
+  <button onclick="showDate()">Show Date</button>
+
+  <p id="result"></p>
+
+  <script>
+    function showIST() {
+      const options = { timeZone: 'Asia/Kolkata', timeStyle: 'long', hour12: false };
+      const istTime = new Date().toLocaleTimeString('en-US', options);
+      document.getElementById('result').textContent = `Indian Standard Time (IST): ${istTime}` + ' Indian Standard Time (IST)';
+    }
+
+    function showDate() {
+      const currentDate = new Date();
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const dayOfWeek = daysOfWeek[currentDate.getDay()];
+      const date = currentDate.toDateString();
+      document.getElementById('result').textContent = `Current Date: ${date}, Day: ${dayOfWeek}`;
+    }
+  </script>
+</body>
+</html>

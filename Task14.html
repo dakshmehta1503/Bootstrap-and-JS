@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Colorful Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #bb6eb2;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #d981ad;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      color: #1e1e1e;
+    }
+
+    form {
+      display: grid;
+      gap: 10px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 320px;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      font-size: 16px;
+      color: #333;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    .gender-label {
+      font-weight: normal;
+    }
+
+    .submit-button {
+      background-color: #007BFF;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 18px;
+      transition: background-color 0.3s;
+    }
+
+    .submit-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Registration Form</h1>
+    <form id="registrationForm" onsubmit="return validateForm()">
+      <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required>
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required>
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <div>
+        <label for="confirmPassword">Re-enter Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+      </div>
+      <div>
+        <label>Gender:</label>
+        <input type="radio" id="male" name="gender" value="Male"> <span class="gender-label">Male</span>
+        <input type="radio" id="female" name="gender" value="Female"> <span class="gender-label">Female</span>
+      </div>
+      <div>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age" required>
+      </div>
+      <div>
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required>
+      </div>
+      <div>
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" required></textarea>
+      </div>
+      <div>
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required>
+      </div>
+      <div>
+        <label for="country">Country:</label>
+        <select id="country" name="country" required>
+          <option value="">Select Country</option>
+          <option value="India">India</option>
+          <option value="USA">USA</option>
+          <option value="Australia">Australia</option>
+          <option value="UK">UK</option>
+        </select>
+      </div>
+      <div>
+        <label for="languages">Languages known:</label>
+        <input type="checkbox" id="english" name="languages" value="English"> English
+        <input type="checkbox" id="kannada" name="languages" value="Kannada"> Kannada
+        <input type="checkbox" id="hindi" name="languages" value="Hindi"> Hindi
+        <input type="checkbox" id="tamil" name="languages" value="Tamil"> Tamil
+      </div>
+      <div>
+        <label for="declaration">Hereby I declare all the given details are true.:</label>
+        <input type="checkbox" id="declaration" name="declaration" required>
+      </div>
+      <p>
+        <a href="https://ethnus.com/" target="_blank">Login in to ethunus website</a>
+      </p>
+      <div>
+        <button type="submit" class="submit-outline-button">Register</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

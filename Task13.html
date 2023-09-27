@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Train Animation</title>
+  <style>
+    #train {
+      position: absolute;
+      width: 500px;
+      height: auto;
+      top: 100px;
+      left: -100px;
+      transition: left 1s linear;
+    }
+  </style>
+</head>
+<body>
+  <img id="train" src="t.png" alt="Train">
+  <script>
+    let animationId;
+    let trainPosition = -100;
+    const trainElement = document.getElementById("train");
+    
+
+    function moveTrain() {
+      trainPosition += 5; // Adjust the speed as needed
+      trainElement.style.left = trainPosition + "px";
+
+      if (trainPosition < window.innerWidth) {
+        animationId = requestAnimationFrame(moveTrain);
+      }
+    }
+
+    function startAnimation() {
+      if (!animationId) {
+        animationId = requestAnimationFrame(moveTrain);
+      }
+    }
+
+    function stopAnimation() {
+      if (animationId) {
+        cancelAnimationFrame(animationId);
+        animationId = null;
+      }
+    }
+  </script>
+  <p class="text-primary">CLICK THE MOVING TRAIN TO HANDLE THE ANIMATION</p>
+    <button id="startButton" onclick="startAnimation()">Start</button>
+    <button id="stopButton" onclick="stopAnimation()">Stop</button>
+</body>
+</html> 
+
+
+
+
+
+
+
+
+

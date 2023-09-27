@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Contact Form</title>
+  <style>
+    .error {
+      border: 2px solid red;
+    }
+    .body {
+    width: 100px;
+    height: 100px;
+    background-color: lightblue;
+    margin: 20px; /* Add margin to create space */
+    display: inline-block;
+  }
+  </style>
+</head>
+<body>
+
+  <form id="contactForm" onsubmit="return validateForm()">
+    <div>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name">
+    </div>
+    <div>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email">
+    </div>
+    <div>
+      <label for="website">Website:</label>
+      <input type="text" id="website" name="website">
+    </div>
+    <div>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message"></textarea>
+    </div>
+    <div>
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+
+  <p id="errorMessage" style="color: red;"></p>
+
+  <script>
+    function validateForm() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const website = document.getElementById("website").value.trim();
+      const message = document.getElementById("message").value.trim();
+      const errorMessage = document.getElementById("errorMessage");
+
+      if (name === "" || email === "" || website === "" || message === "") {
+        errorMessage.textContent = "All fields must be filled properly.";
+        
+        // Add a red outline to empty fields
+        if (name === "") {
+          document.getElementById("name").classList.add("error");
+        } else {
+          document.getElementById("name").classList.remove("error");
+        }
+
+        if (email === "") {
+          document.getElementById("email").classList.add("error");
+        } else {
+          document.getElementById("email").classList.remove("error");
+        }
+
+        if (website === "") {
+          document.getElementById("website").classList.add("error");
+        } else {
+          document.getElementById("website").classList.remove("error");
+        }
+
+        if (message === "") {
+          document.getElementById("message").classList.add("error");
+        } else {
+          document.getElementById("message").classList.remove("error");
+        }
+
+        return false; // Prevent form submission
+      }
+
+      return true; // Allow form submission
+    }
+  </script>
+</body>
+</html>
